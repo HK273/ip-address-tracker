@@ -9,4 +9,5 @@
   ISP
 
   API: https://geo.ipify.org/
+  PW: rx76Z4ckLSy2JQw
   leafletjs: https://leafletjs.com/
