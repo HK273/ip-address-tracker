@@ -7,9 +7,4 @@
   Timezone
     UTC <!-- add offset value dynamically using the API -->
   ISP
-
-  API: https://geo.ipify.org/
-  PW: rx76Z4ckLSy2JQw
-  leafletjs: https://leafletjs.com/
-
-  React Leaflet: https://react-leaflet.js.org/docs/start-installation/
+  API PW: rx76Z4ckLSy2JQw
