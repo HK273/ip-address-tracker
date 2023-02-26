@@ -11,3 +11,5 @@
   API: https://geo.ipify.org/
   PW: rx76Z4ckLSy2JQw
   leafletjs: https://leafletjs.com/
+
+  React Leaflet: https://react-leaflet.js.org/docs/start-installation/
