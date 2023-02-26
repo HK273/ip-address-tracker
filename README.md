@@ -7,7 +7,13 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 - [Overview](#overview)
   - [Links](#links)
 - [My process](#my-process)
+
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
+
+  ## Links
+
+  - [API](https://geo.ipify.org/)
+  - [React Leaflet Tutorial](https://blog.logrocket.com/react-leaflet-tutorial/)
