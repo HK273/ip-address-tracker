@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 50%;
+  margin: auto;
+  margin-top: 17rem;
+}
+.grid-item {
+  padding-block: 5rem;
+  background-color: red;
+}

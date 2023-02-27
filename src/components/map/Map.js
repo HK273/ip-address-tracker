@@ -1,9 +1,14 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "../map/Map.css";
-
-function App() {
+// center={[long,lat]}
+// https://www.latlong.net/
+function MapComponent() {
   return (
-    <MapContainer center={[45.4, -75.7]} zoom={12} scrollWheelZoom={false}>
+    <MapContainer
+      center={[51.38101, 0.10061]}
+      zoom={12}
+      scrollWheelZoom={false}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -12,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default MapComponent;

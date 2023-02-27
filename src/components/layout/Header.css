@@ -1,0 +1,12 @@
+header {
+  position: relative;
+  background: url(../images/pattern-bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  /* Allow overlapping content */
+  z-index: 1000;
+  overflow: visible;
+  height: 25rem;
+}
