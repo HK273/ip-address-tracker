@@ -20,5 +20,5 @@ fetch(concat_url, {
   })
   .then((data) => {
     console.log("data below");
-    console.log(data);
+    console.log(data.location);
   });
