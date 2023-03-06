@@ -4,8 +4,9 @@ import { useState } from "react";
 function SearchBar() {
   const api = "https://geo.ipify.org/api/v2/country,city?";
   const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
-  const [ipAddress, setipAddress] = useState("8.8.8.8");
+  const [ipAddress, setipAddress] = useState();
   const [ipData, setipData] = useState([]);
+  const [errorHTML, seterrorHTML] = useState(null);
 
   function handleIP(event) {
     const input = event.target.value;
@@ -13,6 +14,11 @@ function SearchBar() {
   }
   function handleSubmit(event) {
     event.preventDefault();
+    const ipRegex = /^(\d{1,3}\.){3}\d{1,3}$/;
+    if (!ipAddress || !ipRegex.test(ipAddress)) {
+      seterrorHTML(<h1>Please enter valid IP Address</h1>);
+      return;
+    }
     fetch(api + "apiKey=" + apiKey + "&ipAddress=" + ipAddress)
       .then((response) => {
         if (!response.ok) {
@@ -34,6 +40,7 @@ function SearchBar() {
           },
         ]);
         console.log(ipData);
+        seterrorHTML(null);
       });
   }
 
@@ -58,6 +65,7 @@ function SearchBar() {
           </div>
         </div>
       ))}
+      {errorHTML}
     </div>
   );
 }
