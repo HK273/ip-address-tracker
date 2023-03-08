@@ -1,11 +1,23 @@
 import "../layout/Grid.css";
-function Grid() {
+function Grid(props) {
   return (
     <div className="grid">
-      <div className="grid-item">1</div>
-      <div className="grid-item">2</div>
-      <div className="grid-item">3</div>
-      <div className="grid-item">4</div>
+      <div className="grid-item">
+        <h1>IP ADDRESS</h1>
+        <p>{props.ipaddress}</p>
+      </div>
+      <div className="grid-item">
+        <h1>LOCATION</h1>
+        <p>{props.location}</p>
+      </div>
+      <div className="grid-item">
+        <h1>TIMEZONE</h1>
+        <p>{props.timezone}</p>
+      </div>
+      <div className="grid-item">
+        <h1>ISP</h1>
+        <p>{props.isp}</p>
+      </div>
     </div>
   );
 }

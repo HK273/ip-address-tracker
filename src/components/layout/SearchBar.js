@@ -1,11 +1,12 @@
 import "../layout/SearchBar.css";
 import { useState } from "react";
+import Grid from "./Grid";
 
-function SearchBar() {
+function SearchBar(props) {
   const api = "https://geo.ipify.org/api/v2/country,city?";
   const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
   const [ipAddress, setipAddress] = useState();
-  const [ipData, setipData] = useState([]);
+  const [ipData, setipData] = useState([props]);
   const [errorHTML, seterrorHTML] = useState(null);
 
   function handleIP(event) {
@@ -49,21 +50,17 @@ function SearchBar() {
       <div className="search">
         <form onSubmit={handleSubmit}>
           <input
-            onChange={handleIP} // set input style based on state
+            onChange={handleIP}
             type="text"
             placeholder="Search for an IP..."
           />
           <button className="search-btn" type="submit">
-            Shorten it!
+            Search!
           </button>
         </form>
       </div>
       {ipData.map((locationData, index) => (
-        <div className="short-link" key={index}>
-          <div>
-            <h1 className="p-link">{locationData.country}</h1>
-          </div>
-        </div>
+        <Grid key={index} location={locationData.postalCode}></Grid>
       ))}
       {errorHTML}
     </div>
