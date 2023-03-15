@@ -4,7 +4,7 @@ function Grid(props) {
     <div className="grid">
       <div className="grid-item">
         <h1>IP ADDRESS</h1>
-        <p>{props.ipaddress}</p>
+        <p>{props.ipAddress}</p>
       </div>
       <div className="grid-item">
         <h1>LOCATION</h1>

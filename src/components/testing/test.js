@@ -1,4 +1,4 @@
-const test_url = "https://geo.ipify.org/api/v2/country,city?";
+const test_url = "https://geo.ipify.org/api/v2/country?";
 const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
 const ipAddress = "8.8.8.8";
 
@@ -20,5 +20,5 @@ fetch(concat_url, {
   })
   .then((data) => {
     console.log("data below");
-    console.log(data.location);
+    console.log(data.location.country);
   });

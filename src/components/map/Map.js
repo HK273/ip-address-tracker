@@ -1,12 +1,13 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "../map/Map.css";
-// center={[long,lat]}
+// center={[lat,long]}
+// Just give a default value for this to begin on
 // https://www.latlong.net/
-function MapComponent() {
+function MapComponent(props) {
   return (
     <MapContainer
-      center={[51.38101, 0.10061]}
-      zoom={12}
+      center={[37.38605, -122.08385]}
+      zoom={40}
       scrollWheelZoom={false}
     >
       <TileLayer
