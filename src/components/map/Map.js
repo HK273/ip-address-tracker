@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "../map/Map.css";
 // center={[lat,long]}
-// Just give a default value for this to begin on
+// Just give a default value for this to begin on ip.8.8.8.8
 // https://www.latlong.net/
 function MapComponent(props) {
   return (
