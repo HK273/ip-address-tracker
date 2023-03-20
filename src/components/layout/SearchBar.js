@@ -9,7 +9,7 @@ function SearchBar(props) {
   const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
   const [ipAddress, setipAddress] = useState();
   const [ipData, setipData] = useState([props]);
-  const [geoData, setgeoData] = useState([51.38101, 0.10061]);
+  const [geoData, setgeoData] = useState({ lat: 51.38101, lng: 0.10061 });
   const [errorHTML, seterrorHTML] = useState(null);
 
   function handleIP(event) {
@@ -52,11 +52,8 @@ function SearchBar(props) {
       .then((data) => {
         setgeoData([
           {
-            city: data.location.city,
-            geonameId: data.location.geonameId,
             lat: data.location.lat,
             lng: data.location.lng,
-            postalCode: data.location.postalCode,
           },
         ]);
         console.log(geoData);
