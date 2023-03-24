@@ -17,7 +17,6 @@ function Parent() {
     setDataTwo(dataTwo);
   }
 
-  // Doesn't work, find out why
   return (
     <div>
       <button onClick={searchAPI}>Click This</button>
