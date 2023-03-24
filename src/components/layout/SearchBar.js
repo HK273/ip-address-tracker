@@ -8,7 +8,7 @@ function SearchBar(props) {
   const apiTwo = "https://geo.ipify.org/api/v2/country,city?";
   const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
   const [ipAddress, setipAddress] = useState();
-  const [ipData, setipData] = useState(props);
+  const [ipData, setipData] = useState({});
   const [locationData, setlocationData] = useState({
     lat: 51.38101,
     lng: 0.10061,
