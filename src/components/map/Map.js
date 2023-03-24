@@ -3,9 +3,6 @@ import "../map/Map.css";
 // center={[lat,long]}
 // Just give a default value for this to begin on ip.8.8.8.8
 // https://www.latlong.net/
-// const position = [37.38605, -122.08385];
-// const lat = 37.38605;
-// const long = -122.08385;
 function MapComponent({ lat, lng }) {
   return (
     <MapContainer center={[lat, lng]} zoom={40} scrollWheelZoom={false}>
