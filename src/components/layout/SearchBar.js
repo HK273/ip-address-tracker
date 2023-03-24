@@ -2,8 +2,9 @@ import "../layout/SearchBar.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import Grid from "./Grid";
+import MapComponent from "../map/Map";
 
-function SearchBar(props) {
+function SearchBar() {
   const api = "https://geo.ipify.org/api/v2/country?";
   const apiTwo = "https://geo.ipify.org/api/v2/country,city?";
   const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
@@ -40,12 +41,16 @@ function SearchBar(props) {
       timezone: data.location.timezone,
       isp: data.isp,
     });
-    setlocationData(dataTwo);
+    setlocationData({
+      lat: dataTwo.location.lat,
+      lng: dataTwo.location.lng,
+    });
     seterrorHTML(null);
   }
   useEffect(() => {
     console.log(ipData);
-  }, [ipData]);
+    console.log(locationData);
+  }, [ipData, locationData]);
 
   return (
     <div className="main-wrap">
@@ -68,6 +73,11 @@ function SearchBar(props) {
         timezone={ipData.timezone}
         isp={ipData.isp}
       ></Grid>
+      <MapComponent
+        key={locationData.lat}
+        lat={locationData.lat}
+        lng={locationData.lng}
+      />
     </div>
   );
 }
