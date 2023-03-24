@@ -1,65 +1,51 @@
 import "../layout/SearchBar.css";
 import { useState } from "react";
+import { useEffect } from "react";
 import Grid from "./Grid";
-import MapComponent from "../map/Map";
 
 function SearchBar(props) {
   const api = "https://geo.ipify.org/api/v2/country?";
-  const api_two = "https://geo.ipify.org/api/v2/country,city?";
+  const apiTwo = "https://geo.ipify.org/api/v2/country,city?";
   const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
   const [ipAddress, setipAddress] = useState();
-  const [ipData, setipData] = useState([props]);
-  const [geoData, setgeoData] = useState({ lat: 51.38101, lng: 0.10061 });
+  const [ipData, setipData] = useState(props);
+  const [locationData, setlocationData] = useState({
+    lat: 51.38101,
+    lng: 0.10061,
+  });
   const [errorHTML, seterrorHTML] = useState(null);
 
   function handleIP(event) {
     const input = event.target.value;
     setipAddress(input);
   }
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const ipRegex = /^(\d{1,3}\.){3}\d{1,3}$/;
     if (!ipAddress || !ipRegex.test(ipAddress)) {
       seterrorHTML(<h1>Please enter valid IP Address</h1>);
+      console.log(errorHTML);
       return;
     }
-    fetch(api + "apiKey=" + apiKey + "&ipAddress=" + ipAddress)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("something went wrong");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setipData([
-          {
-            ipAddress: data.ip,
-            location: data.location.country + "," + data.location.region,
-            timezone: data.location.timezone,
-            isp: data.isp,
-          },
-        ]);
-        console.log(ipData);
-        seterrorHTML(null);
-      });
-    fetch(api_two + "apiKey=" + apiKey + "&ipAddress=" + ipAddress)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("something went wrong");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setgeoData([
-          {
-            lat: data.location.lat,
-            lng: data.location.lng,
-          },
-        ]);
-        console.log(geoData);
-        seterrorHTML(null);
-      });
+    const responses = await Promise.all([
+      fetch(api + "apiKey=" + apiKey + "&ipAddress=" + ipAddress),
+      fetch(apiTwo + "apiKey=" + apiKey + "&ipAddress=" + ipAddress),
+    ]);
+    const [data, dataTwo] = await Promise.all(
+      responses.map((response) => response.json())
+    );
+    setipData({
+      ip: data.ip,
+      location: data.location.country + "," + data.location.region,
+      timezone: data.location.timezone,
+      isp: data.isp,
+    });
+    setlocationData(dataTwo);
+    seterrorHTML(null);
   }
+  useEffect(() => {
+    console.log(ipData);
+  }, [ipData]);
 
   return (
     <div className="main-wrap">
@@ -73,18 +59,15 @@ function SearchBar(props) {
           <button className="search-btn" type="submit">
             Search!
           </button>
+          {errorHTML}
         </form>
       </div>
-      {ipData.map((locationData, index) => (
-        <Grid
-          key={index}
-          ipAddress={locationData.ipAddress}
-          location={locationData.location}
-          timezone={locationData.timezone}
-          isp={locationData.isp}
-        ></Grid>
-      ))}
-      {errorHTML}
+      <Grid
+        ipAddress={ipData.ip}
+        location={ipData.location}
+        timezone={ipData.timezone}
+        isp={ipData.isp}
+      ></Grid>
     </div>
   );
 }

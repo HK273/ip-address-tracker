@@ -8,8 +8,8 @@ import Parent from "./components/lift-state/parent";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <HeaderSection />
-    <MapComponent /> */}
+    <HeaderSection />
+    <MapComponent />
     <Parent></Parent>
   </React.StrictMode>
 );
