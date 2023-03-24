@@ -9,30 +9,12 @@ function Parent() {
   async function searchAPI() {
     const api = "https://pokeapi.co/api/v2/pokemon/1";
     const apiTwo = "https://pokeapi.co/api/v2/pokemon/2";
-    fetch(api)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("something went wrong");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("data below");
-        console.log(data);
-        setData(data);
-      });
-    fetch(apiTwo)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("something went wrong");
-        }
-        return response.json();
-      })
-      .then((dataTwo) => {
-        console.log("data below");
-        console.log(dataTwo);
-        setDataTwo(dataTwo);
-      });
+    const responses = await Promise.all([fetch(api), fetch(apiTwo)]);
+    const [data, dataTwo] = await Promise.all(
+      responses.map((response) => response.json())
+    );
+    setData(data);
+    setDataTwo(dataTwo);
   }
 
   // Doesn't work, find out why
