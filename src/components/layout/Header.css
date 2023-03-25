@@ -9,4 +9,5 @@ header {
   z-index: 1000;
   overflow: visible;
   height: 45rem;
+  padding-top: 5rem;
 }
