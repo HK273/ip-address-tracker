@@ -1,8 +1,22 @@
-.main-wrap {
-  display: grid;
-  text-align: center;
-}
-
 .search {
   margin-bottom: 3rem;
+  text-align: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+}
+input {
+  padding-block: 1.5rem;
+  width: 70%;
+  border: none;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.search-btn {
+  background-color: var(--very-dark-gray);
+  width: 5rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding-block: 1.6rem;
 }
