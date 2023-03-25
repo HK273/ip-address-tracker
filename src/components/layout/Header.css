@@ -8,5 +8,5 @@ header {
   /* Allow overlapping content */
   z-index: 1000;
   overflow: visible;
-  height: 35rem;
+  height: 45rem;
 }
