@@ -1,4 +1,7 @@
 .leaflet-container {
   height: calc(100vh - 256px);
   position: relative;
+  z-index: -1;
+  margin-top: -5rem;
+  /* overflow-y: visible; */
 }
