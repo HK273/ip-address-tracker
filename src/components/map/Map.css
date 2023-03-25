@@ -6,7 +6,7 @@
   /* overflow-y: visible; */
 }
 
-@media only screen and (min-width: 70em) {
+@media only screen and (min-width: 80em) {
   .leaflet-container {
     margin-top: -5rem;
   }

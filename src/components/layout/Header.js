@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 function HeaderSection() {
   return (
     <header>
+      <h1>IP Address Tracker</h1>
       <SearchBar />
     </header>
   );
