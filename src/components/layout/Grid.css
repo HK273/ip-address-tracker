@@ -1,7 +1,7 @@
 .grid {
   display: grid;
 
-  width: 50%;
+  width: 80%;
   margin: auto;
   margin-top: 17rem;
 }
@@ -13,5 +13,6 @@
 @media only screen and (min-width: 70em) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
+    width: 50%;
   }
 }
