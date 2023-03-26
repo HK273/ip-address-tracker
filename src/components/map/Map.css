@@ -2,5 +2,12 @@
   height: calc(100vh - 256px);
   position: relative;
   z-index: -1;
+  margin-top: -26rem;
   /* overflow-y: visible; */
+}
+
+@media only screen and (min-width: 85em) {
+  .leaflet-container {
+    margin-top: -7rem;
+  }
 }
