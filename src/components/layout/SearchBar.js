@@ -53,7 +53,7 @@ function SearchBar() {
     });
     seterrorHTML(null);
   }
-  // useEffect to log objects to the console
+  // useEffect to log object state to the console
   // useEffect(() => {
   //   console.log(ipData);
   //   console.log(locationData);
