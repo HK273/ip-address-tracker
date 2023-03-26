@@ -10,10 +10,15 @@ function SearchBar() {
   const apiTwo = "https://geo.ipify.org/api/v2/country,city?";
   const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
   const [ipAddress, setipAddress] = useState();
-  const [ipData, setipData] = useState({});
+  const [ipData, setipData] = useState({
+    ip: "8.8.8.8",
+    location: "US,California",
+    timezone: "-07:00",
+    isp: "Google LLC",
+  });
   const [locationData, setlocationData] = useState({
-    lat: 51.38101,
-    lng: 0.10061,
+    lat: 37.38605,
+    lng: -122.08385,
   });
   const [errorHTML, seterrorHTML] = useState(null);
 
