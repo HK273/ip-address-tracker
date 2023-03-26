@@ -1,5 +1,5 @@
 .search {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   text-align: center;
 }
 form {
@@ -22,4 +22,10 @@ input {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   padding-block: 1.6rem;
+}
+
+@media only screen and (min-width: 85em) {
+  input {
+    width: 30%;
+  }
 }
