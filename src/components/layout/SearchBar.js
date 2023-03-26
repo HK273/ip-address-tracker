@@ -53,10 +53,11 @@ function SearchBar() {
     });
     seterrorHTML(null);
   }
-  useEffect(() => {
-    console.log(ipData);
-    console.log(locationData);
-  }, [ipData, locationData]);
+  // useEffect to log objects to the console
+  // useEffect(() => {
+  //   console.log(ipData);
+  //   console.log(locationData);
+  // }, [ipData, locationData]);
 
   return (
     <div className="main-wrap">
