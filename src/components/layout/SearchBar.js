@@ -65,7 +65,7 @@ function SearchBar() {
           <input
             onChange={handleIP}
             type="text"
-            placeholder="Search for an IP..."
+            placeholder="Search for an IP Address..."
           />
           <button className="search-btn" type="submit">
             <img src={ArrowIcon} alt="" />
