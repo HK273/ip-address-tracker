@@ -8,7 +8,7 @@ import ArrowIcon from "../images/icon-arrow.svg";
 function SearchBar() {
   const api = "https://geo.ipify.org/api/v2/country?";
   const apiTwo = "https://geo.ipify.org/api/v2/country,city?";
-  const apiKey = "at_gtxE4ztYdEzHBWpvl9jZHin1qdaBW";
+  const apiKey = process.env.REACT_APP_API_KEY;
   const [ipAddress, setipAddress] = useState();
   const [ipData, setipData] = useState({
     ip: "8.8.8.8",
