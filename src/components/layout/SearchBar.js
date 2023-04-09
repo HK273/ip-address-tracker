@@ -4,10 +4,10 @@ import { useEffect } from "react";
 import Grid from "./Grid";
 import MapComponent from "../map/Map";
 import ArrowIcon from "../images/icon-arrow.svg";
-import dotenv from "dotenv";
-import findConfig from "find-config";
+// import dotenv from "dotenv";
+// import findConfig from "find-config";
 
-dotenv.config({ path: findConfig(".env") });
+// dotenv.config({ path: findConfig(".env") });
 
 function SearchBar() {
   const api = "https://geo.ipify.org/api/v2/country?";
