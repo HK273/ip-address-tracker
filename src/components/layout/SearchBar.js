@@ -1,6 +1,6 @@
 import "../layout/SearchBar.css";
 import { useState } from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Grid from "./Grid";
 import MapComponent from "../map/Map";
 import ArrowIcon from "../images/icon-arrow.svg";
