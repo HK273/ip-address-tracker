@@ -9,18 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    env:
-      SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: main
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2.4.0
-        with:
-          node-version: "16.x"
 
       - name: Install dependencies
         run: npm install
@@ -30,13 +20,8 @@ jobs:
           REACT_APP_API_KEY=${{ secrets.API_KEY }} npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.2
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
           folder: build
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Save the deployment URL
-        if: success()
-        run: echo "DEPLOYMENT_URL=https://${{ github.repository_owner }}.github.io/${{ github.repository_name }}" >> $GITHUB_ENV
+        env_file: .env.production
