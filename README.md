@@ -17,4 +17,4 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 ## Solution Links
 
 - [Site](https://hk273.github.io/ip-address-tracker/)
-- [Solution]()
+- [Solution](https://www.frontendmentor.io/solutions/ip-tracker-ipFihLnXNG)
