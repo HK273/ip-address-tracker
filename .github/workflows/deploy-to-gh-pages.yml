@@ -20,8 +20,8 @@ jobs:
           REACT_APP_API_KEY=${{ secrets.API_KEY }} npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: JamesIves/github-pages-deploy-action@4.1.2
         with:
           branch: gh-pages
           folder: build
-        env_file: .env.production
+          token: ${{ secrets.ACCESS_TOKEN }}
