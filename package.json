@@ -1,7 +1,8 @@
 {
   "name": "ip-tracker",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://hk273.github.io/ip-address-tracker",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -18,6 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "deploy": "gh-pages -d build --baseurl '/ip-address-tracker'",
     "eject": "react-scripts eject",
     "start:dotenv": "dotenv -e .env react-scripts start"
   },
